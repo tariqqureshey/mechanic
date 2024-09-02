@@ -1,0 +1,39 @@
+<section class="hero is-info is-large">
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item">
+            <img src="https://bulma.io/assets/images/bulma-type-white.png" alt="Logo" />
+          </a>
+          <span class="navbar-burger" data-target="navbarMenuHeroB">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenuHeroB" class="navbar-menu">
+          <div class="navbar-end">
+            <span class="navbar-item">
+            <%= link_to "Create New Reciept", new_receipt_path, class: "button" %>
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <p class="title">
+        <% if content_for(:title) %>
+            <%= yield :title %>
+        <% else %>
+            Mechanic
+        <% end %>
+      </p>
+      <p class="subtitle">Subtitle</p>
+    </div>
+  </div>
+</section>
