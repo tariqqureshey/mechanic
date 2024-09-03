@@ -1,22 +1,35 @@
 <div id="<%= dom_id receipt %>">
+
+  <header class="card-header">
+  <p class="card-header-title">
+  <strong>Description: </strong> <%= receipt.description %>
+  </p>
+  </header>
+
+  <div class="card-content">
   <p>
+  <span class="has-text-weight-bold">
     <strong>Date:</strong>
     <%= receipt.date %>
+  </span>
   </p>
 
   <p>
+  <span class="has-text-weight-bold">
     <strong>Time:</strong>
-    <%= receipt.time %>
+    <%= receipt.time.to_fs(:nice_time) %>
+  </span>
   </p>
 
   <p>
-    <strong>Description:</strong>
-    <%= receipt.description %>
-  </p>
-
-  <p>
+  <span class="has-text-weight-bold">
     <strong>Total:</strong>
-    <%= receipt.total %>
+    $<%= receipt.total %>
+  </span>
   </p>
+
+  <p class="italic"> Created <%= time_ago_in_words(receipt.created_at) %> ago</p>
+
+  </div>
 
 </div>
