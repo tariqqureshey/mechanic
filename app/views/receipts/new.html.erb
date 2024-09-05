@@ -1,11 +1,9 @@
-<% content_for :title, "New receipt" %>
-
-<h1>New receipt</h1>
+<div class="columns mt-6 is-centered">
+<div class="column is-one-third">
+<h1 class="is-size-2 has-text-weight-bold mb-3">New receipt</h1>
 
 <%= render "form", receipt: @receipt %>
 
 <br>
-
-<div>
-  <%= link_to "Back to receipts", receipts_path %>
+</div>
 </div>
