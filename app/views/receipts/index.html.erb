@@ -11,7 +11,9 @@
       <%= render receipt %>
 
       <div class="card-footer">
-      <%= link_to "Show this receipt", receipt, class: "card-footer-item" %>
+      <%= link_to "Show", receipt, class: "card-footer-item" %>
+      <%= link_to "Edit", edit_receipt_path(receipt), class: "card-footer-item" %>
+      <%= link_to "Delete", receipt, method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "card-footer-item" %>
       </div>
     
       </div>

@@ -1,37 +1,41 @@
 <%= form_with(model: receipt) do |form| %>
   <% if receipt.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(receipt.errors.count, "error") %> prohibited this receipt from being saved:</h2>
+    <div class="message is-danger">
+      <div class="message-header">
+        <p><%= pluralize(receipt.errors.count, "error") %> prohibited this receipt from being saved:</p>
+      </div>
 
-      <ul>
-        <% receipt.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+      <div class="message-body">
+        <ul>
+          <% receipt.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+        </div>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :date, style: "display: block" %>
-    <%= form.date_field :date %>
+  <div class="field">
+    <%= form.label :date, style: "display: block", class:"label" %>
+    <%= form.date_field :date, class:"input" %>
   </div>
 
-  <div>
-    <%= form.label :time, style: "display: block" %>
-    <%= form.time_field :time %>
+  <div class="field">
+    <%= form.label :time, style: "display: block", class:"label" %>
+    <%= form.time_field :time, class:"input" %>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
+  <div class="field">
+    <%= form.label :description, style: "display: block", class:"label" %>
+    <%= form.text_field :description, class:"input" %>
   </div>
 
-  <div>
-    <%= form.label :total, style: "display: block" %>
-    <%= form.number_field :total %>
+  <div class="field">
+    <%= form.label :total, style: "display: block", class:"label" %>
+    <%= form.number_field :total, class:"input" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="actions">
+    <%= form.submit class: "button is-success" %>
   </div>
 <% end %>
