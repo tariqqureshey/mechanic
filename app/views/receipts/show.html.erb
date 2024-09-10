@@ -28,7 +28,7 @@
       <div class="columns">
         <%= link_to "Edit this receipt", edit_receipt_path(@receipt), class: "button is-gray" %>
         <%= link_to "Back to receipts", receipts_path, class: "button is-gray" %>
-        <%= link_to "Destroy this receipt", @receipt, method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "button is-gray" %>
+        <%= link_to "Destroy this receipt", @receipt, method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete this receipt?'}, class: "button is-gray" %>
       </div>
     </div>
 
