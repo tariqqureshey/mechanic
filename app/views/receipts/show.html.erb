@@ -1,12 +1,12 @@
 <%= content_for :title do %>
   <%= @receipt.description %> &ndash; <%= DateTime.now.to_formatted_s(:nice_date) %>
 <% end %>
-#
+
 <div class="columns mt-6 is-centered">
   <div class="column is-one-third">
     <nav class="panel is-link">
 
-      <p class="panel heading">
+      <p class="panel-heading">
         <%= @receipt.total %>
       </p>
 
