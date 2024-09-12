@@ -1,0 +1,37 @@
+<div class="columns mt-6 mb-6 is-centered">
+    <div class="column is-half">
+    <% @receipts.each do |day, receipts| %>
+        <h3 class="is-size-4 has-text-weight-bold mb-4 mt-6 has-text-centered"> Entries for <%= day %>
+        </h3>
+
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Total Revenue</p>
+                    <p class="title"> $<%= receipts.pluck(:total).sum %></p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Number of Jobs</p>
+                    <p class="title"> <%= receipts.count %></p>
+                </div>
+            </div>
+        </nav>
+
+        <% receipts.each do |receipt| %>
+            <%= link_to receipt_path(receipt) do %>
+                <div class="card">
+                    <div class="card-content">
+                        <strong><%= receipt.description %></strong><br/>
+                        <%= receipt.date %>
+                        <%= receipt.time %>
+                        <%= receipt.total %>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
+
+    <% end %>
+    </div>
+</div>
